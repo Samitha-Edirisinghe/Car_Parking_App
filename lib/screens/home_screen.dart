@@ -86,6 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
           );
         },
       ),
+      // Removed FloatingActionButton QR scanner code
     );
   }
 }
