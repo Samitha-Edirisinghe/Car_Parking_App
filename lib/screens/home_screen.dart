@@ -5,7 +5,6 @@ import '../services/auth_service.dart';
 import '../services/parking_service.dart';
 import 'map_screen.dart';
 import 'booking_screen.dart';
-import 'qr_scanner_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -86,15 +85,6 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           );
         },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const QrScannerScreen()),
-          );
-        },
-        child: const Icon(Icons.qr_code_scanner),
       ),
     );
   }
