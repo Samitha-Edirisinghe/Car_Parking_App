@@ -33,11 +33,15 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
             icon: const Icon(Icons.map),
             onPressed: () async {
-              final parkingService = context.read<ParkingService>();
+              final currentContext = context;
+              if (!mounted) return;
+
+              final parkingService = currentContext.read<ParkingService>();
               final spots = await parkingService.getNearbyParkingSpots(0, 0);
+
               if (!mounted) return;
               Navigator.push(
-                context,
+                currentContext,
                 MaterialPageRoute(
                   builder: (context) => MapScreen(parkingSpots: spots),
                 ),
