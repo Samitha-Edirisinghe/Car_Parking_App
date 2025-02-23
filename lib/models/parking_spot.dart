@@ -1,4 +1,3 @@
-// models/parking_spot.dart
 class ParkingSpot {
   final String id;
   final String name;
