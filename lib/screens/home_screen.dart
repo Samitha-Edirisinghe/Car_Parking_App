@@ -32,12 +32,10 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
             icon: const Icon(Icons.map),
             onPressed: () async {
-              final currentContext = context;
               if (!mounted) return;
-
+              final currentContext = context;
               final parkingService = currentContext.read<ParkingService>();
               final spots = await parkingService.getNearbyParkingSpots(0, 0);
-
               if (!mounted) return;
               Navigator.push(
                 currentContext,
@@ -86,7 +84,6 @@ class _HomeScreenState extends State<HomeScreen> {
           );
         },
       ),
-      // Removed FloatingActionButton QR scanner code
     );
   }
 }
